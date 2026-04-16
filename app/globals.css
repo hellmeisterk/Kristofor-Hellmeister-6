@@ -1,0 +1,278 @@
+:root {
+  --bg: #0b1020;
+  --bg-soft: #131a2f;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #f5f7fb;
+  --muted: rgba(245, 247, 251, 0.76);
+  --soft: rgba(245, 247, 251, 0.56);
+  --accent: #b9d5ff;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(86, 112, 188, 0.18), transparent 30%),
+    linear-gradient(180deg, #0a0f1f 0%, #0c1224 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 80px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.25fr minmax(240px, 340px);
+  gap: 32px;
+  align-items: center;
+  padding: 36px 0 56px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  color: var(--soft);
+}
+
+.hero h1,
+.section-heading h2 {
+  margin: 0;
+  line-height: 1.05;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.9rem);
+  max-width: 12ch;
+}
+
+.hero-text,
+.section-description,
+.bio-card p,
+.newsletter-card p,
+.book-tagline,
+.book-audience,
+.hero-card-copy p,
+.section-hook {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.hero-text {
+  max-width: 62ch;
+  margin: 20px 0 0;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 14px 20px;
+  border: 1px solid var(--border);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  font-weight: 700;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-solid {
+  background: #f1f4fa;
+  color: #09101f;
+  border-color: #f1f4fa;
+}
+
+.button-outline {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.small-button {
+  padding: 10px 14px;
+  font-size: 0.92rem;
+}
+
+.hero-card,
+.bio-card,
+.newsletter-card,
+.book-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.hero-card {
+  overflow: hidden;
+}
+
+.hero-cover {
+  width: 100%;
+  height: auto;
+}
+
+.hero-card-copy {
+  padding: 18px 20px 22px;
+}
+
+.hero-card-label {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.74rem;
+  color: var(--soft);
+}
+
+.hero-card-copy h2,
+.book-content h3 {
+  margin: 0;
+}
+
+.about,
+.section-block,
+.newsletter {
+  padding-top: 28px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-description {
+  max-width: 60ch;
+  margin: 12px 0 0;
+}
+
+.section-hook {
+  margin: 10px 0 0;
+  font-size: 0.96rem;
+  font-style: italic;
+  color: rgba(240, 245, 255, 0.66);
+}
+
+.bio-card,
+.newsletter-card {
+  padding: 24px;
+}
+
+.bio-card p,
+.newsletter-card p {
+  margin: 0 0 16px;
+}
+
+.bio-card p:last-child,
+.newsletter-card p:last-child {
+  margin-bottom: 0;
+}
+
+.books-area {
+  padding-top: 12px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.book-card {
+  overflow: hidden;
+}
+
+.book-cover-wrap {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.book-content {
+  padding: 18px;
+}
+
+.book-content h3 {
+  font-size: 1.25rem;
+}
+
+.book-tagline {
+  margin: 10px 0 10px;
+}
+
+.book-audience {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: rgba(240, 245, 255, 0.62);
+}
+
+.mailerlite-embed {
+  margin-top: 24px;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    max-width: 360px;
+  }
+
+  .book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 24px, 1180px);
+    padding-top: 18px;
+  }
+
+  .hero {
+    padding-top: 16px;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-card,
+  .newsletter-card {
+    padding: 20px;
+  }
+}
